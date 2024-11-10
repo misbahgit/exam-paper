@@ -1,0 +1,31 @@
+\documentclass[10pt,addpoints]{exam} % Ensure 'exam' class is used
+\usepackage{examstyle} % Include the custom style file
+\geometry{
+    a4paper,
+    top=.75in,           % Distance from top of the page to the start of the main content
+    headheight=15pt,   % Height of the header
+    headsep=2pt,      % Space between the header and the main text
+    left=.75in,
+    right=1in,
+    bottom=1.5in
+}
+\linespread{1.2} % 1.5 line spacing
+\setlist[enumerate,1]{label=\roman*)} % set numbering style
+\begin{document}
+
+\input{wco201c}  %question file
+
+\setupheaderfooter % comment if not needed
+\qheader % question paper top information including Note
+% Begin the question list
+\begin{questions}
+\pointsinrightmargin
+% Include the questions defined in the qfile e.g. wco504c or wco504c_supp
+\qone              % Placeholder for the first question
+\qtwo              % Placeholder for the second question
+\qthree            % Placeholder for the second question
+\qfour
+\end{questions}
+\finish
+
+\end{document}

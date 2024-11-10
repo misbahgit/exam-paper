@@ -1,0 +1,126 @@
+% customexamstyle
+\ProvidesPackage{examstyle}
+\RequirePackage{amsmath}
+\RequirePackage{enumitem}
+\RequirePackage[a4paper]{geometry}
+
+\newcommand{\blank}[1][2cm]{\underline{\hspace{#1}}}
+
+% Define variables for paper settings
+\newcommand{\papercode}{}
+\newcommand{\subjectcode}{}
+\newcommand{\subjectname}{}
+\newcommand{\MaximumMarks}{}
+\newcommand{\duration}{}
+\newcommand{\type}{}
+\newcommand{\for}{} % question paper set for whom like 'For Womnen' or may be left blank
+\newcommand{\qfile}{}
+
+% Define macros to set paper details
+\newcommand{\setpapercode}[1]{\renewcommand{\papercode}{#1}}
+\newcommand{\setqfile}[1]{\renewcommand{\qfile}{#1}}
+\newcommand{\setsubjectcode}[1]{\renewcommand{\subjectcode}{#1}}
+\newcommand{\setsubjectname}[1]{\renewcommand{\subjectname}{#1}}
+\newcommand{\setmaxmarks}[1]{\renewcommand{\MaximumMarks}{#1}}
+\newcommand{\setduration}[1]{\renewcommand{\duration}{#1}}
+\newcommand{\setsession}[1]{\def\session{#1}}
+\newcommand{\setexam}[1]{\def\exam{#1}}
+\newcommand{\setsemester}[1]{\def\semester{#1}}
+\newcommand{\setbranch}[1]{\def\branch{#1}}
+\newcommand{\settype}[1]{\renewcommand{\type}{#1}}
+\newcommand{\setfor}[1]{
+%\renewcommand{\for}{#1}
+\if\relax\detokenize{#1}\relax % Checks if #1 is empty
+        \renewcommand{\for}{ }    % If #1 is empty, set \for to "//"
+    \else
+        \renewcommand{\for}{(#1) \\} % Otherwise, set \for to "#1 //"
+    \fi
+}
+
+% Question numbering
+\newcounter{questioncount}
+\newcounter{partcount}
+
+% Customize question label format
+\renewcommand{\questionlabel}{\hspace{-.4cm}\textbf{Q\thequestion.}}
+
+% Define a command to insert a regular question without displaying marks if not specified
+\newcommand{\regularquestion}[2][]{% 
+    \stepcounter{questioncount}%
+    \ifthenelse{\equal{#1}{}}{% 
+        \question{#2}% 
+    }{% 
+        \question[#1]{#2}% 
+    }% 
+    \setcounter{partcount}{0} % Reset part count for new questions
+}
+
+% Define an OR macro centered
+\newcommand{\OR}{%
+    \vspace{-5pt} % Start on a new line
+    \begin{center}
+        \textbf{OR} % Print OR in bold
+    \end{center}
+    \vspace{-5pt} % Start on a new line again (optional for spacing)
+}
+
+% Header and Footer setup
+\newcommand{\setupheaderfooter}{
+    \rhead{\vspace{.2cm}\textbf{Paper Code:}\hspace{2pt}\papercode\\[1ex]\hrule}
+    \lhead{\textbf{\type}\\[1.5ex]\hrule}
+    \chead{\hspace{15pt}Page \thepage\ of \numpages\\[1ex]\hrule}
+    \lfoot{
+        \hrule 
+        \begin{minipage}[t]{0.3\textwidth}\vspace{.2cm}
+            Moderated by: \\
+            \underline{\hspace{3cm}} \\
+            \underline{\hspace{3cm}} \\
+            \underline{\hspace{3cm}}
+        \end{minipage}
+    }
+    \cfoot{\vspace{.2cm}
+        \begin{minipage}[t]{0.3\textwidth}
+            %\centering
+            Number of Questions: \arabic{questioncount}\\[1ex]
+            Number of pages: \numpages
+        \end{minipage}
+    }
+    \rfoot{\vspace{.2cm}
+        \begin{minipage}[t]{0.4\textwidth}
+            \raggedleft
+            Signature of Examiner(s): \\
+            \underline{\hspace{3cm}}
+        \end{minipage}
+    }
+}
+
+% Remove "points" label from marks and display points in parentheses
+\pointname{}
+\renewcommand{\thepoints}{\thepoints}
+
+% Exam header setup
+\newcommand{\qheader}{%
+    \begin{center}
+        \textbf{\session \\ \MakeUppercase{\semester}\hspace{1pt} SEMESTER\hspace{2pt}\MakeUppercase{\exam\hspace{1pt}examination} \\ \MakeUppercase{\for} \MakeUppercase{(\branch)}} \\
+        \vspace{0.1cm}
+        \textbf{\MakeUppercase{\subjectname}\\ (\subjectcode)}
+    \end{center}
+    
+    \vspace{0.1cm}
+    
+    \noindent \textbf{\hspace{-.2cm}Maximum Marks: \MaximumMarks \hfill Duration: \duration}
+    
+    \vspace{0.1cm}
+    
+    \noindent \textbf{\hspace{-.18cm}Note:} i) Attempt all questions.
+    
+    \hspace{.22cm} ii) Choose alternative if indicated by \textbf{OR}.
+    
+    \vspace{0.1cm}
+}
+\def \finish{
+\vspace{.1cm}
+\rule{.45\linewidth}{0.45pt} % Horizontal line with specific width and height
+\textbf{\emph{END}}
+\rule{.45\linewidth}{0.45pt} % Horizontal line with specific width and height
+}

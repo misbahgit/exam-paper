@@ -1,0 +1,86 @@
+% data.tex
+% sample question paper on c
+\setpapercode{3020} % paper code
+\setsubjectcode{WCO201C} % subject code
+\setsubjectname{Programming in C} % Subject name
+\setmaxmarks{60} % maximum marks
+\setduration{2:00 Hours} % duration of exam
+\setexam{Diploma in Engineering } % set class name
+\setsemester{v} % set semester
+\setbranch{Computer/IT} %set branch
+\setsession{2021-22} % set session
+\settype{Main}
+\setfor{} % write special message like 'For Women' if needed else leave blank
+% Questions
+\newcommand{\qone}{
+   \regularquestion{}
+\begin{parts}
+\part [10] State True/False
+    \begin{enumerate}
+        \item The \texttt{sizeof} operator returns the size of a variable in bytes.
+        \item Comments in C programming are ignored by the compiler during compilation.
+        \item Strings in C programming are represented as arrays of characters terminated by a null character.
+        \item C programming supports both call by value and call by address for passing arguments to functions.
+        \item The C programming language is a low-level language.
+        \item Variables declared inside a function in C programming are global variables.
+        \item Arrays in C programming can store elements of different data types.
+        \item In C programming, \texttt{int} data type can store both positive and negative numbers.
+        \item The \texttt{do-while} loop in C programming executes its statements at least once, even if the condition is false.
+        \item In C programming, \texttt{==} operator is used to check equality between two values. 
+    \end{enumerate}
+    \part[3] Explain the use of macros in ‘C’.
+
+\part[2] With the help of an example, explain the use of the \texttt{typedef} keyword in C programming.
+\end{parts}
+}
+
+\newcommand{\qtwo}{
+   \regularquestion{}
+\begin{parts}
+\part [10] Fill in the blanks.
+   \begin{enumerate}
+        \item Ovel is used for \underline{\hspace{2cm}} in the flowchart.
+        \item The \texttt{scanf} function is used to \underline{\hspace{2cm}} input from the console.
+        \item \underline{\hspace{2cm}} format string is used to print the floating-point number in scientific notation.
+        \item The \texttt{do-while} loop in C is \underline{\hspace{2cm}} controlled.
+        \item The \texttt{return} statement is used to \underline{\hspace{2cm}} a function.
+        \item The arguments written in the function definition are called \underline{\hspace{2cm}} arguments.
+        \item \underline{\hspace{2cm}} function is used to read a whole line of text.
+        \item \underline{\hspace{2cm}} retain their values between function calls.
+        \item The condition in \texttt{for} loop is \underline{\hspace{2cm}}.
+        \item Structure in C is an example of \underline{\hspace{2cm}} data.
+   \end{enumerate}
+
+
+\part[3] Explain the difference between \texttt{++i} and \texttt{i++} using an appropriate C-program.
+
+\part[2] How are arrays declared and initialized in C programming?
+\end{parts}
+}
+
+\newcommand{\qthree}{
+\regularquestion{}
+\begin{parts}
+\part[3] Write a program to check if the given number is divisible by 3 or not. Read the number from the keyboard.
+
+\part[7] Write a program to calculate the sum of \(1 \times 2 + 2 \times 3 + 3 \times 4 + 4 \times 5 + 5 \times 6 + \ldots\) up to \(n \times (n+1)\), read \(n\) from the keyboard.
+
+% Optional Questions with OR
+\part[5] Write a program to calculate the sum of digits of a number entered by the user.
+\OR
+\part[5] Write a program to find the factorial of a given number using a loop. Read the number from the keyboard.
+\end{parts}
+}
+
+\newcommand{\qfour}{
+\regularquestion{}
+\begin{parts}
+   \part[8] Write a program in ‘C’ to print the sum of two matrices. If addition is possible, otherwise print the message that “Addition is not possible.” Read the size and elements of the matrices from the keyboard.
+
+% Optional Questions with OR
+\part[7] Write a program to calculate the number of 1’s in the binary representation of an integer using bitwise operators. For example, integer 7 (binary representation 111) has 3 ones.
+\OR
+\part[7] Write a program to convert a binary number to a decimal number. Read the binary number from the keyboard.
+\end{parts}
+}
+% Additional questions can be defined in a similar manner
