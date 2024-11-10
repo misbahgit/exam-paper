@@ -88,6 +88,6 @@ For questions with optional choices, you can add the "OR" separator using the \O
 ```
 
 ## Additional Information
-- Blank Space: Use \blank[width] to create a blank space for short answers. The default width is 2 cm.
+- Blank Space: Use \blank[width] to create a blank space for short answers or Fill in the blanks. If a width is specified it will leave a blank space of the length otherwise the default width is 2 cm.
 - Question Numbering: The \regularquestion command automatically increments question numbers, and \questionlabel adds "Q" before each question number.
 - Custom headerfooter: The header displays the type of paper, page number, paper code. Footer automatically displays moderation lines, the total number of questions, and space for examiner signatures.
