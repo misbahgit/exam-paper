@@ -2,16 +2,16 @@
 This is a custom LaTeX style package designed to help streamline the creation of exam papers using the exam document class. This package allows easy configuration of headers, footers, question numbering, and other exam details like subject code, maximum marks, and duration.
 
 ## Features
--Commands to set exam metadata (e.g., subject code, paper code, exam type).
--Macros for easy insertion of questions, including optional marks display.
--Auto-numbering of questions with optional "OR" separator for alternative questions.
--Predefined layout for exam headers and notes.
+- Commands to set exam metadata (e.g., subject code, paper code, exam type).
+- Macros for easy insertion of questions, including optional marks display.
+- Auto-numbering of questions with optional "OR" separator for alternative questions.
+- Predefined layout for exam headers and notes.
 ## Requirements
 ### The package requires the following LaTeX packages:
 
--amsmath
--enumitem
--geometry
+- amsmath
+- enumitem
+- geometry
 Additionally, you should use the exam class for your document.
 
 ## Installation
